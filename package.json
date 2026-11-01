@@ -1,0 +1,21 @@
+{
+  "name": "home-control",
+  "version": "0.1.0",
+  "description": "One place to control Bluetooth and WiFi lights, speakers and scenes from your phone.",
+  "type": "module",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "discover": "node scripts/discover.js",
+    "test": "node --test"
+  },
+  "engines": { "node": ">=18" },
+  "dependencies": {
+    "ws": "^8.18.0"
+  },
+  "optionalDependencies": {
+    "@abandonware/noble": "^1.9.2-25"
+  },
+  "license": "MIT"
+}

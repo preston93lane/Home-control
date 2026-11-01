@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#111318" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <title>Home Control</title>
+  <link rel="manifest" href="/manifest.webmanifest" />
+  <link rel="icon" href="/icon.svg" />
+  <link rel="apple-touch-icon" href="/icon.svg" />
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <header>
+    <h1>Home</h1>
+    <span id="conn" class="conn" title="Connection to hub">●</span>
+  </header>
+
+  <main>
+    <section>
+      <div class="section-head">
+        <h2>Scenes</h2>
+        <button id="new-scene" class="link">+ Save current as scene</button>
+      </div>
+      <div id="scenes" class="scenes"></div>
+    </section>
+    <div id="rooms"></div>
+  </main>
+
+  <div id="toast" class="toast" hidden></div>
+
+  <dialog id="scene-dialog">
+    <form method="dialog" id="scene-form">
+      <h3>Save scene</h3>
+      <p class="hint">Set your lights and speakers the way you like, then save. The devices you tick will return to their current settings whenever you tap the scene.</p>
+      <label>Name <input name="name" required placeholder="e.g. Reading" maxlength="40" /></label>
+      <label>Icon <input name="icon" value="✨" maxlength="4" class="icon-input" /></label>
+      <fieldset id="scene-devices"><legend>Include</legend></fieldset>
+      <div class="actions">
+        <button value="cancel" formnovalidate class="secondary">Cancel</button>
+        <button value="save" class="primary">Save</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script type="module" src="/app.js"></script>
+</body>
+</html>

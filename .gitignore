@@ -1,0 +1,4 @@
+node_modules/
+config/devices.json
+data/
+!data/.gitkeep

@@ -1,0 +1,43 @@
+{
+  "devices": [
+    { "id": "living-lamp", "name": "Living Room Lamp", "room": "Living Room", "type": "light", "driver": "mock", "kind": "light" },
+    { "id": "tv-strip", "name": "TV Light Strip", "room": "Living Room", "type": "light", "driver": "mock", "kind": "light", "initialState": { "color": "#6b5bff" } },
+    { "id": "bedroom-bulb", "name": "Bedroom Bulb", "room": "Bedroom", "type": "light", "driver": "mock", "kind": "light" },
+    { "id": "kitchen-speaker", "name": "Kitchen Speaker", "room": "Kitchen", "type": "speaker", "driver": "mock", "kind": "speaker" }
+  ],
+
+  "defaultScenes": [
+    {
+      "name": "Movie Night", "icon": "🎬",
+      "actions": [
+        { "deviceId": "living-lamp", "state": { "on": true, "brightness": 15, "color": "#ff9f43" } },
+        { "deviceId": "tv-strip", "state": { "on": true, "brightness": 40, "color": "#3b2bff" } },
+        { "deviceId": "kitchen-speaker", "state": { "volume": 10 } }
+      ]
+    },
+    {
+      "name": "Bright", "icon": "☀️",
+      "actions": [
+        { "deviceId": "living-lamp", "state": { "on": true, "brightness": 100, "color": "#ffffff" } },
+        { "deviceId": "tv-strip", "state": { "on": true, "brightness": 100, "color": "#ffffff" } },
+        { "deviceId": "bedroom-bulb", "state": { "on": true, "brightness": 100, "color": "#ffffff" } }
+      ]
+    },
+    {
+      "name": "All Off", "icon": "🌙",
+      "actions": [
+        { "deviceId": "living-lamp", "state": { "on": false } },
+        { "deviceId": "tv-strip", "state": { "on": false } },
+        { "deviceId": "bedroom-bulb", "state": { "on": false } },
+        { "deviceId": "kitchen-speaker", "state": { "playing": false } }
+      ]
+    }
+  ],
+
+  "_examples_for_real_devices": [
+    { "id": "desk-bulb", "name": "Desk Bulb", "room": "Office", "type": "light", "driver": "wiz", "host": "192.168.1.50" },
+    { "id": "govee-strip", "name": "Govee Strip", "room": "Bedroom", "type": "light", "driver": "govee", "host": "192.168.1.51" },
+    { "id": "bed-strip", "name": "Bed LED Strip", "room": "Bedroom", "type": "light", "driver": "ble-led", "protocol": "elk-bledom", "address": "be:ff:20:00:12:34" },
+    { "id": "sonos", "name": "Living Room Sonos", "room": "Living Room", "type": "speaker", "driver": "sonos", "host": "192.168.1.60" }
+  ]
+}
